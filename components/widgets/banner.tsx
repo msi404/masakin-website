@@ -4,7 +4,7 @@ import type { IBanner } from "@/types/ui";
 import { Button } from "@/components/ui/button";
 const Banner: React.FC<IBanner> = ({ title, description, label, image }) => {
 	return (
-		<div
+		<section
 			className="text-white flex flex-col justify-center items-center space-y-6 bg-no-repeat bg-center bg-cover w-full h-96"
 			style={{
 				backgroundImage: `url("${image}")`,
@@ -17,7 +17,7 @@ const Banner: React.FC<IBanner> = ({ title, description, label, image }) => {
 				{label}
 				<ArrowRight className="ltr:ml-3 rtl:mr-3 rtl:-scale-x-100" />
 			</Button>
-		</div>
+		</section>
 	);
 };
 

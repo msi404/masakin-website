@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { MapPin, Phone, Mail } from "lucide-react";
 import useWtxI18n from "@/hooks/use-wtx-i18n";
+import LanguageChanger from "@/components/language-changer";
+import Logo from "@/components/logo";
 
 const DesktopNav: React.FC = () => {
 	const [activeTab, setActiveTab] = useState<number>(0);
@@ -36,10 +38,13 @@ const DesktopNav: React.FC = () => {
 				<ul className="flex text-xs">{renderNavLinks()}</ul>
 				<ul className="hidden lg:flex font-medium">
 					{renderNavTabs()}
+					<li className="ltr:ml-3 rtl:mr-3">
+						<LanguageChanger />
+					</li>
 				</ul>
 			</div>
 			<div>
-				<div>Logo</div>
+				<Logo />
 			</div>
 		</Fragment>
 	);

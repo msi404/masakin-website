@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import Link from "next/link";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
 	Accordion,
@@ -7,6 +9,8 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
+import LanguageChanger from "@/components/language-changer";
 
 const MobileFooter: React.FC = () => {
 	const { t } = useTranslation();
@@ -21,28 +25,61 @@ const MobileFooter: React.FC = () => {
 		t("common:commercialagencies"),
 	];
 	return (
-		<Accordion type="single" collapsible className="w-full">
-			<AccordionItem value="item-1">
-				<AccordionTrigger>Is it accessible?</AccordionTrigger>
-				<AccordionContent>
-					Yes. It adheres to the WAI-ARIA design pattern.
-				</AccordionContent>
-			</AccordionItem>
-			<AccordionItem value="item-2">
-				<AccordionTrigger>Is it styled?</AccordionTrigger>
-				<AccordionContent>
-					Yes. It comes with default styles that matches the other
-					components&apos; aesthetic.
-				</AccordionContent>
-			</AccordionItem>
-			<AccordionItem value="item-3">
-				<AccordionTrigger>Is it animated?</AccordionTrigger>
-				<AccordionContent>
-					Yes. It's animated by default, but you can disable it if you
-					prefer.
-				</AccordionContent>
-			</AccordionItem>
-		</Accordion>
+		<div className="flex flex-col space-y-8 w-screen">
+			<div className="flex flex-col space-y-5">
+				<h1>Logo</h1>
+				<p className="w-52 font-extralight">
+					{t("common:logodescription")}
+				</p>
+			</div>
+			<Accordion type="single" collapsible className="w-full">
+				<AccordionItem value="item-1">
+					<AccordionTrigger className="text-lg">
+						{t("common:footerlinks")}
+					</AccordionTrigger>
+					<AccordionContent>
+						<ul className="font-light text-gray-500 space-y-2 text-lg">
+							{navTabs.map((tab, i) => (
+								<li key={i}>
+									<Separator className="my-2" />
+									<Link href="#">{tab}</Link>
+								</li>
+							))}
+						</ul>
+					</AccordionContent>
+				</AccordionItem>
+				<AccordionItem value="item-2">
+					<AccordionTrigger className="text-lg">
+						{t("common:footercontact")}
+					</AccordionTrigger>
+					<AccordionContent>
+						<ul className="font-light text-gray-500 space-y-2 text-lg">
+							{navLinks.map((link, i) => (
+								<li key={i}>
+									<Separator className="my-2" />
+									<Link href="#">{link}</Link>
+								</li>
+							))}
+						</ul>
+					</AccordionContent>
+				</AccordionItem>
+				<AccordionItem value="item-3">
+					<AccordionTrigger className="space-y-2 text-lg">
+						{t("common:footerfollow")}
+					</AccordionTrigger>
+					<AccordionContent className="flex space-x-5">
+						<Facebook fill="black" />
+						<Instagram color="white" fill="black" />
+						<Linkedin fill="black" />
+						<Twitter fill="black" />
+					</AccordionContent>
+				</AccordionItem>
+			</Accordion>
+			<LanguageChanger />
+			<div className="mx-auto py-6 font-light text-gray-500">
+				<p>{t("common:copyright")}</p>
+			</div>
+		</div>
 	);
 };
 

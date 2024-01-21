@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { Menu } from "lucide-react";
 import useWtxI18n from "@/hooks/use-wtx-i18n";
+import Logo from "@/components/logo";
 
 const MobileNav: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +26,18 @@ const MobileNav: React.FC = () => {
 		};
 	});
 	return (
-		<div className="px-10 relative">
-			<Menu size={30} onClick={onMenuClick} className="cursor-pointer" />
-			{renderMenu()}
+		<div className="flex w-screen justify-between items-center">
+			<div className="px-10 relative">
+				<Menu
+					size={30}
+					onClick={onMenuClick}
+					className="cursor-pointer"
+				/>
+				{renderMenu()}
+			</div>
+			<div className="ltr:mr-10 rtl:ml-10 z-10">
+				<Logo />
+			</div>
 		</div>
 	);
 
@@ -37,7 +47,9 @@ const MobileNav: React.FC = () => {
 				<ul className="ltr:left-0 rtl:right-0 bg-white absolute flex flex-col space-y-10 h-screen w-screen py-10 px-10">
 					{navTabs.map((tab, i) => (
 						<li onClick={resetMenu} className="text-4xl" key={i}>
-							<Link href="#">{tab}</Link>
+							<Link className="block py-2" href="#">
+								{tab}
+							</Link>
 						</li>
 					))}
 				</ul>

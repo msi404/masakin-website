@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import initTranslations from "@/app/i18n";
-import Banner from "@/components/widgets/banner";
 import TranslationsProvider from "@/providers/translations-provider";
-import LanguageChanger from "@/components/language-changer";
+import Banner from "@/components/widgets/banner";
+import Featuers from "@/components/widgets/features";
+import Projects from "@/components/widgets/projects";
 const i18Namespaces = ["home"];
 const Home: NextPage<{ params: { locale: any } }> = async ({
 	params: { locale },
@@ -22,7 +23,8 @@ const Home: NextPage<{ params: { locale: any } }> = async ({
 				label={t("bannerlabel")}
 				image={IMAGE_URL}
 			/>
-			<LanguageChanger />
+			<Featuers />
+			<Projects />
 		</TranslationsProvider>
 	);
 };

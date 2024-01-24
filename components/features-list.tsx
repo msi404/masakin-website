@@ -11,8 +11,8 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Hammer
-					className="mx-5 shadow-xl rounded-full w-12 h-12 p-2"
-					size={30}
+					className="mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					size={20}
 					color="DarkGoldenRod"
 				/>
 			),
@@ -22,8 +22,8 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Building
-					className="mx-5 shadow-xl rounded-full w-12 h-12 p-2"
-					size={30}
+					className=" mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					size={20}
 					color="DarkGoldenRod"
 				/>
 			),
@@ -33,8 +33,8 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Construction
-					className="mx-5 shadow-xl rounded-full w-12 h-12 p-2"
-					size={30}
+					className=" mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					size={20}
 					color="DarkGoldenRod"
 				/>
 			),
@@ -44,8 +44,8 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Ship
-					className="mx-5 shadow-xl rounded-full w-12 h-12 p-2"
-					size={30}
+					className=" mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					size={20}
 					color="DarkGoldenRod"
 				/>
 			),
@@ -60,7 +60,7 @@ const FeaturesList: React.FC = () => {
 					{item.icon}
 					<div className="flex flex-col space-y-5">
 						<h1 className="font-bold">{item.title}</h1>
-						<p className="text-sm w-80 lg:text-base lg:w-96 text-gray-500">
+						<p className="text-xs w-72 lg:text-base lg:w-96 text-gray-500">
 							{item.description}
 						</p>
 					</div>

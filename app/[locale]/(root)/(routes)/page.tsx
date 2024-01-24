@@ -4,6 +4,9 @@ import TranslationsProvider from "@/providers/translations-provider";
 import Banner from "@/components/widgets/banner";
 import Featuers from "@/components/widgets/features";
 import Projects from "@/components/widgets/projects";
+import Presentaion from "@/components/widgets/presentaion";
+import Information from "@/components/widgets/information";
+import Agencies from "@/components/widgets/agencies";
 const i18Namespaces = ["home"];
 const Home: NextPage<{ params: { locale: any } }> = async ({
 	params: { locale },
@@ -25,6 +28,9 @@ const Home: NextPage<{ params: { locale: any } }> = async ({
 			/>
 			<Featuers />
 			<Projects />
+			<Presentaion />
+			<Information />
+			<Agencies />
 		</TranslationsProvider>
 	);
 };

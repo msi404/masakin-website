@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
 import LanguageChanger from "@/components/language-changer";
+import Logo from "@/components/logo";
 
 const MobileFooter: React.FC = () => {
 	const { t } = useTranslation();
@@ -27,7 +28,7 @@ const MobileFooter: React.FC = () => {
 	return (
 		<div className="flex flex-col space-y-8 w-screen">
 			<div className="flex flex-col space-y-5">
-				<h1>Logo</h1>
+				<Logo />
 				<p className="w-52 font-extralight">
 					{t("common:logodescription")}
 				</p>

@@ -37,17 +37,17 @@ const FeatuersBlob: React.FC = () => {
 			return (
 				<div className="relative">
 					<div>
-						<svg width={400} height={400}>
+						<svg width={300} height={300}>
 							<circle
-								r={200}
-								cy={200}
-								cx={200}
+								r={150}
+								cy={150}
+								cx={150}
 								fill="DarkGoldenRod"
 							/>
 						</svg>
 					</div>
 					<Image
-						className="left-0 top-20 absolute"
+						className="left-0 top-14 absolute"
 						width={600}
 						height={600}
 						src={IMAGE_URL}

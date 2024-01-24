@@ -29,7 +29,9 @@
 		"react-dom": "^18",
 		"react-hook-form": "^7.49.3",
 		"react-i18next": "^14.0.0",
+		"react-marquee-slider": "^1.1.5",
 		"react-responsive": "^9.0.2",
+		"styled-components": "^6.1.8",
 		"tailwind-merge": "^2.2.0",
 		"tailwindcss-animate": "^1.0.7",
 		"zod": "^3.22.4"

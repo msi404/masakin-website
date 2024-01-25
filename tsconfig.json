@@ -30,7 +30,8 @@
 		".next/types/**/*.ts",
 		"app/i18n.js",
 		"providers/translations-provider.js",
-		"components/language-changer.js"
+		"components/language-changer.js",
+		"components/logos-marquee/logos-marquee.jsx"
 	],
 	"exclude": ["node_modules"]
 }

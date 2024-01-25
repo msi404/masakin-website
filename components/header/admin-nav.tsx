@@ -2,17 +2,12 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
-import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { Menu, MapPin, Phone, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import LanguageChanger from "@/components/language-changer";
 import { cn } from "@/lib/utils";
-import useWtxI18n from "@/hooks/use-wtx-i18n";
 import Logo from "@/components/logo";
 function Navigation() {
-	const { t } = useTranslation();
-	useWtxI18n();
 	const path = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
 	const [activeTab, setActiveTab] = useState<string>(path);
@@ -62,34 +57,14 @@ function Navigation() {
 
 	const navTabs = [
 		{
-			href: "/",
-			text: t("common:home"),
+			href: "/dashboard",
+			text: "Dashboard",
 			delay: 0.1,
 		},
 		{
-			href: "/services",
-			text: t("common:serviceoffers"),
+			href: "/dashboard/projects",
+			text: "Projects",
 			delay: 0.2,
-		},
-		{
-			href: "/agencies",
-			text: t("common:commercialagencies"),
-			delay: 0.3,
-		},
-		{
-			href: "/projects",
-			text: t("common:projects"),
-			delay: 0.4,
-		},
-		{
-			href: "/about-us",
-			text: t("common:aboutus"),
-			delay: 0.5,
-		},
-		{
-			href: "/contact",
-			text: t("common:contactus"),
-			delay: 0.6,
 		},
 	];
 	return (
@@ -97,7 +72,7 @@ function Navigation() {
 			<AnimatePresence>
 				<motion.div
 					initial={{ height: 100 }}
-					animate={{ height: isOpen ? 550 : 100 }}
+					animate={{ height: isOpen ? 280 : 100 }}
 					exit={{ height: 100 }}
 					className="px-6 flex flex-wrap items-center space-x-6 lg:space-x-0 pb-10 max-w-[1400px] mx-auto"
 				>
@@ -122,9 +97,7 @@ function Navigation() {
 							</ul>
 						</div>
 						<nav>
-							<ul className="lg:flex space-y-10 items-center lg:space-y-0 justify-between pt-4 lg:pt-0">
-								<LanguageChanger />
-
+							<ul className="lg:flex lg:space-x-10 space-y-10 items-center lg:space-y-0 justify-between pt-4 lg:pt-0">
 								{renderNavTabs()}
 							</ul>
 						</nav>

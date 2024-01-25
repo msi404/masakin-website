@@ -3,6 +3,7 @@ import React from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/components/ui/separator";
+import LanguageChanger from "@/components/language-changer";
 import Logo from "@/components/logo";
 
 const DesktopFooter: React.FC = () => {
@@ -67,6 +68,7 @@ const DesktopFooter: React.FC = () => {
 			</div>
 			<div className="flex flex-col items-center py-6 space-y-6 font-light text-gray-500">
 				<Separator />
+
 				<p>{t("common:copyright")}</p>
 			</div>
 		</div>

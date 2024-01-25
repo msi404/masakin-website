@@ -17,7 +17,7 @@ const Layout: React.FC<{
 			namespaces={i18Namespaces}
 		>
 			<Navigation />
-			<main>{children}</main>
+			<main className="mt-[100px]">{children}</main>
 			<Footer />
 		</TranslationsProvider>
 	);

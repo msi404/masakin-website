@@ -77,6 +77,13 @@
 
 @layer components {
   .nav-tab {
-    @apply relative ltr:ml-4 rtl:mr-4 active:text-yellow-600  hover:text-yellow-500 before:absolute before:h-[4px] before:top-11 before:w-full before:bg-yellow-600;
+    @apply relative ltr:ml-4 rtl:mr-4 active:text-yellow-600  hover:text-yellow-500 lg:before:absolute lg:before:h-[4px] lg:before:top-10 lg:before:w-full lg:before:bg-yellow-600;
   }
+}
+
+.my-config {
+  --darkmode: 0;
+  --h-accent: 223;
+  --s-accent: 100%;
+  --l-accent: 61%;
 }

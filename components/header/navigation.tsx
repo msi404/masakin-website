@@ -32,6 +32,7 @@ function Navigation() {
 		}
 	};
 	useEffect(() => {
+		setActiveTab(path);
 		if (mediaQuery !== isMinWidthMedium) {
 			setIsMinWidthMedium(mediaQuery);
 		}
@@ -99,7 +100,7 @@ function Navigation() {
 					initial={{ height: 100 }}
 					animate={{ height: isOpen ? 550 : 100 }}
 					exit={{ height: 100 }}
-					className="px-6 flex flex-wrap items-center space-x-6 lg:space-x-0 pb-10 max-w-[1400px] mx-auto"
+					className="px-5 lg:px-24 flex flex-wrap items-center space-x-6 lg:space-x-0 pb-10 max-w-[1400px] mx-auto"
 				>
 					<div className="flex-1 flex justify-between items-center py-3">
 						<Logo />
@@ -113,18 +114,19 @@ function Navigation() {
 					<div className="flex flex-col space-y-5 justify-center items-center font-normal text-2xl lg:text-base text-center lg:flex lg:items-center lg:w-auto w-full">
 						<div className="hidden lg:block text-xs">
 							<ul className="flex space-x-10">
+								<LanguageChanger />
 								{navLinks.map((link, i) => (
-									<li className="flex space-x-3" key={i}>
+									<li className="flex" key={i}>
 										{link.icon}
-										<span>{link.text}</span>
+										<span className="mx-3">
+											{link.text}
+										</span>
 									</li>
 								))}
 							</ul>
 						</div>
 						<nav>
 							<ul className="lg:flex space-y-10 items-center lg:space-y-0 justify-between pt-4 lg:pt-0">
-								<LanguageChanger />
-
 								{renderNavTabs()}
 							</ul>
 						</nav>
@@ -141,7 +143,7 @@ function Navigation() {
 				className={cn(
 					`${
 						activeTab === tab.href
-							? "text-yellow-600  before:block"
+							? "text-yellow-600 font-bold  before:block"
 							: "before:hidden"
 					}`,
 					"nav-tab"

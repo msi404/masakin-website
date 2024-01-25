@@ -30,7 +30,9 @@
 		"app/i18n.js",
 		"providers/translations-provider.js",
 		"components/language-changer.js",
-		"components/logos-marquee/logos-marquee.jsx"
+		"components/logos-marquee/logos-marquee.jsx",
+		"components/counter.js",
+		"middleware.js"
 	],
 	"exclude": ["node_modules"]
 }

@@ -54,7 +54,7 @@ export default function LanguageChanger ()
 	}
 
 	return (
-		<select onChange={ handleChange } value={ currentLocale }>
+		<select className="mx-3" onChange={ handleChange } value={ currentLocale }>
 			<option value="en">English</option>
 			<option value="ar">Arabic</option>
 		</select>

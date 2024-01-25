@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import useWtxI18n from "@/hooks/use-wtx-i18n";
 
@@ -20,13 +21,28 @@ const FeatuersBlob: React.FC = () => {
 	return (
 		<div className="lg:self-end space-y-10 mx-auto lg:mx-0">
 			<div>
-				<h1 className="text-5xl text-center lg:text-start lg:text-6xl font-medium">
+				<motion.h1
+					initial={{
+						opacity: 0,
+						translateY: "30px",
+					}}
+					whileInView={{
+						opacity: 1,
+						translateY: "0px",
+						transition: {
+							delay: 0.4,
+							duration: 2,
+						},
+					}}
+					viewport={{ once: true, amount: 0.6 }}
+					className="text-5xl text-center lg:text-start lg:text-6xl font-medium"
+				>
 					<span style={{ color: "DarkGoldenRod" }}>
 						{t("featuersblobtitlecolored")}
 					</span>
 					<br />
 					{t("featuersblobtitle")}
-				</h1>
+				</motion.h1>
 			</div>
 			{renderResponsiveBlob()}
 		</div>
@@ -35,7 +51,23 @@ const FeatuersBlob: React.FC = () => {
 	function renderResponsiveBlob() {
 		if (isMinWidthMedium)
 			return (
-				<div className="relative">
+				<motion.div
+					initial={{
+						opacity: 0,
+						translateY: "30px",
+					}}
+					whileInView={{
+						opacity: 1,
+						translateY: "0px",
+						transition: {
+							delay: 0.3,
+							damping: 0.3,
+							duration: 0.8,
+						},
+					}}
+					viewport={{ once: true, amount: 0.6 }}
+					className="relative"
+				>
 					<div>
 						<svg width={300} height={300}>
 							<circle
@@ -53,10 +85,26 @@ const FeatuersBlob: React.FC = () => {
 						src={IMAGE_URL}
 						alt="construction engineers"
 					/>
-				</div>
+				</motion.div>
 			);
 		return (
-			<div className="relative">
+			<motion.div
+				initial={{
+					opacity: 0,
+					translateY: "30px",
+				}}
+				whileInView={{
+					opacity: 1,
+					translateY: "0px",
+					transition: {
+						delay: 0.3,
+						damping: 0.3,
+						duration: 0.8,
+					},
+				}}
+				viewport={{ once: true, amount: 0.6 }}
+				className="relative"
+			>
 				<div>
 					<svg width={500} height={500}>
 						<circle
@@ -74,7 +122,7 @@ const FeatuersBlob: React.FC = () => {
 					src={IMAGE_URL}
 					alt="construction engineers"
 				/>
-			</div>
+			</motion.div>
 		);
 	}
 };

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import { Hammer, Building, Construction, Ship } from "lucide-react";
 import useWtxI18n from "@/hooks/use-wtx-i18n";
 
@@ -56,7 +57,23 @@ const FeaturesList: React.FC = () => {
 	return (
 		<ul className="space-y-10">
 			{list.map((item, i) => (
-				<li className="flex" key={i}>
+				<motion.li
+					initial={{
+						opacity: 0,
+						translateY: "30px",
+					}}
+					whileInView={{
+						opacity: 1,
+						translateY: "0px",
+						transition: {
+							delay: i - 1,
+							duration: 0.3,
+						},
+					}}
+					viewport={{ once: true }}
+					className="flex"
+					key={i}
+				>
 					{item.icon}
 					<div className="flex flex-col space-y-5">
 						<h1 className="font-bold">{item.title}</h1>
@@ -64,7 +81,7 @@ const FeaturesList: React.FC = () => {
 							{item.description}
 						</p>
 					</div>
-				</li>
+				</motion.li>
 			))}
 		</ul>
 	);

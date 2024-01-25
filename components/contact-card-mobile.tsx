@@ -13,13 +13,13 @@ const ContactCardMobile: React.FC = () => {
 		<div className="absolute -bottom-[100px] left-1/2 -translate-x-1/2 flex flex-col rounded-xl overflow-hidden">
 			<div className="space-y-5 bg-yellow-500 p-5">
 				<h1 className="text-2xl w-72">{t("contactcardheader")}</h1>
-				<p className="w-80">{t("contactcarddescription")}</p>
+				<p className="w-72">{t("contactcarddescription")}</p>
 				<Button className="w-full" variant="secondary">
 					{t("contactcardlabel")}
 				</Button>
 			</div>
 			<div
-				className="w-[500px] md:w-[700px] h-[250px] bg-center bg-cover bg-no-repeat"
+				className="w-[350px] md:w-[700px] h-[250px] bg-center bg-cover bg-no-repeat"
 				style={{
 					backgroundImage: `url(${IMAGE})`,
 					transform: `rotateY(180deg)`,

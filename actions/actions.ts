@@ -5,12 +5,16 @@ type ProjectType = {
 	file: string;
 };
 export const createProject = async ({ title, file }: ProjectType) => {
-	await prisma.project.create({
-		data: {
-			image: file,
-			title: title,
-		},
-	});
+	try {
+		await prisma.project.create({
+			data: {
+				image: file,
+				title: title,
+			},
+		});
+	} catch (error: any) {
+		console.log(error.message);
+	}
 };
 
 export const deleteProject = async (id: number) => {

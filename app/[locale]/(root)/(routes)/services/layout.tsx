@@ -14,7 +14,7 @@ const Layout: React.FC<{
 				title={t("crumbservicestitle")}
 				path={t("crumbservicespath")}
 			/>
-			<div className="container my-44">{children}</div>
+			<div className="container my-20">{children}</div>
 		</Fragment>
 	);
 };

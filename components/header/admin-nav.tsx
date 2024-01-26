@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
+import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Menu, MapPin, Phone, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -76,6 +77,7 @@ function Navigation() {
 					exit={{ height: 100 }}
 					className="px-6 flex flex-wrap items-center space-x-6 lg:space-x-0 pb-10 max-w-[1400px] mx-auto"
 				>
+					<UserButton />
 					<div className="flex-1 flex justify-between items-center py-3">
 						<Logo />
 					</div>

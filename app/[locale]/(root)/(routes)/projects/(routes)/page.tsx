@@ -1,8 +1,6 @@
-import { Fragment } from "react";
 import type { NextPage } from "next";
 import prisma from "@/lib/prisma";
 import Item from "@/components/item";
-import Crumb from "@/components/crumb";
 const Page: NextPage = async () => {
 	const projects = await prisma.project.findMany();
 	return (

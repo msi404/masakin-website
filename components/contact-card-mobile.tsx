@@ -10,10 +10,10 @@ const ContactCardMobile: React.FC = () => {
 	const { t } = useTranslation();
 	useWtxI18n();
 	return (
-		<div className="absolute -bottom-[100px] left-1/2 -translate-x-1/2 flex flex-col rounded-xl overflow-hidden">
+		<div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col rounded-xl overflow-hidden">
 			<div className="space-y-5 bg-yellow-500 p-5">
-				<h1 className="text-2xl w-72">{t("contactcardheader")}</h1>
-				<p className="w-72">{t("contactcarddescription")}</p>
+				<h1 className="text-xl w-72">{t("contactcardheader")}</h1>
+				<p className="w-72 text-xs">{t("contactcarddescription")}</p>
 				<Button className="w-full" variant="secondary">
 					{t("contactcardlabel")}
 				</Button>

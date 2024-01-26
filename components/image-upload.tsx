@@ -28,7 +28,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ value, onChange }) => {
 			uploadPreset="uxvsxycu"
 		>
 			<div className="p-4 border-4 border-dashed border-primary rounded-lg hover:opacity-75 transition flex flex-col space-y-2 items-center justify-center">
-				<div className="relative flex justify-center h-40 w-96 mx-auto">
+				<div className="relative flex justify-center h-20 w-28 lg:h-40 lg:w-96 mx-auto">
 					{value ? (
 						<Image
 							fill
@@ -37,7 +37,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ value, onChange }) => {
 							src={value}
 						/>
 					) : (
-						<Cloud size={150} color="gray" />
+						<Cloud size={100} color="gray" />
 					)}
 				</div>
 			</div>

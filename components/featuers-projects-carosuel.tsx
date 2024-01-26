@@ -26,7 +26,7 @@ const FeatuersProjectsCarosuel: React.FC = () => {
 		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
 	];
 	return (
-		<section className="container space-y-10 px-12 md:px-36">
+		<section className="container space-y-10 px-20 md:px-36">
 			<div>
 				<h1 className="text-4xl font-bold">
 					{t("featuersprojectsheadline")}

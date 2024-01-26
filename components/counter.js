@@ -20,7 +20,7 @@ const Counter = ( { from, to, duration = 6 } ) =>
 	}, [ from, to ] );
 
 	return (
-		<h1 className="text-4xl font-bold"
+		<h1 className="text-xl lg:text-4xl font-bold"
 			ref={ nodeRef }
 		/>
 	);

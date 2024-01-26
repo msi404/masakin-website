@@ -4,7 +4,7 @@ import Navigation from "@/components/header/navigation";
 import Footer from "@/components/footer/footer";
 import TranslationsProvider from "@/providers/translations-provider";
 
-const i18Namespaces = ["common"];
+const i18Namespaces = ["common", "contact", "about-us"];
 const Layout: React.FC<{
 	children: ReactNode;
 	params: { locale: any };

@@ -35,7 +35,7 @@ const FeatuersBlob: React.FC = () => {
 						},
 					}}
 					viewport={{ once: true, amount: 0.6 }}
-					className="text-5xl text-center lg:text-start lg:text-6xl font-medium"
+					className="text-3xl text-center lg:text-start lg:text-6xl font-medium"
 				>
 					<span style={{ color: "DarkGoldenRod" }}>
 						{t("featuersblobtitlecolored")}
@@ -69,11 +69,11 @@ const FeatuersBlob: React.FC = () => {
 					className="relative"
 				>
 					<div>
-						<svg width={300} height={300}>
+						<svg width={250} height={250}>
 							<circle
-								r={150}
-								cy={150}
-								cx={150}
+								r={125}
+								cy={125}
+								cx={125}
 								fill="DarkGoldenRod"
 							/>
 						</svg>

@@ -53,7 +53,9 @@ const Page: NextPage = () => {
 		<Fragment>
 			<Card className="lg:w-1/2 mx-auto">
 				<CardHeader>
-					<CardTitle>Create Project</CardTitle>
+					<CardTitle className="text-base md:text-3xl">
+						Create Project
+					</CardTitle>
 					<CardDescription>
 						Deploy your new project in one-click.
 					</CardDescription>
@@ -69,7 +71,7 @@ const Page: NextPage = () => {
 								name="title"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="font-bold text-3xl">
+										<FormLabel className="font-bold text-base lg:text-3xl">
 											Ttile
 										</FormLabel>
 										<FormControl>
@@ -90,7 +92,7 @@ const Page: NextPage = () => {
 								name="image"
 								render={({ field }) => (
 									<FormItem className="flex flex-col space-y-5">
-										<FormLabel className="font-bold text-3xl">
+										<FormLabel className="font-bold text-base lg:text-3xl">
 											Upload Image
 										</FormLabel>
 										<FormControl>
@@ -107,16 +109,24 @@ const Page: NextPage = () => {
 									</FormItem>
 								)}
 							/>
-							<CardFooter className="flex justify-between">
-								<Button
-									onClick={() => router.back()}
-									variant="outline"
-								>
-									Cancel
-								</Button>
-								<Button type="submit" disabled={isLoading}>
-									Submit
-								</Button>
+							<CardFooter>
+								<div className="mx-auto w-96 flex flex-col md:justify-between md:flex-row space-y-7 md:space-y-0">
+									<Button
+										className="w-block"
+										size="lg"
+										onClick={() => router.back()}
+										variant="outline"
+									>
+										Cancel
+									</Button>
+									<Button
+										size="lg"
+										type="submit"
+										disabled={isLoading}
+									>
+										Submit
+									</Button>
+								</div>
 							</CardFooter>
 						</form>
 					</Form>

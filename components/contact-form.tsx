@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import { Map, Mail, Phone } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import useWtxI18n from "@/hooks/use-wtx-i18n";
 import { Button } from "@/components/ui/button";
 import {
 	Form,
@@ -29,6 +31,8 @@ const FormSchema = z.object({
 });
 
 const ContactForm: React.FC = () => {
+	const { t } = useTranslation();
+	useWtxI18n();
 	const form = useForm<z.infer<typeof FormSchema>>({
 		resolver: zodResolver(FormSchema),
 		defaultValues: {
@@ -49,16 +53,14 @@ const ContactForm: React.FC = () => {
 			<div className="flex flex-col space-y-16 items-center w-full lg:space-y-0 lg:items-start lg:flex-row lg:justify-between">
 				<div className="flex w-full items-center flex-col space-y-10 lg:items-start">
 					<div className="space-y-5">
-						<h1 className="text-3xl">Contact Us</h1>
+						<h1 className="text-3xl">{t("contact:headline")}</h1>
 						<div className="w-44 h-2 bg-yellow-500" />
-						<p className="text-sm">
-							Reach out to us for any inquiry
-						</p>
+						<p className="text-sm">{t("contact:description")}</p>
 					</div>
 					<Form {...form}>
 						<form
 							onSubmit={form.handleSubmit(onSubmit)}
-							className="w-2/3 space-y-6"
+							className="lg:w-2/3 space-y-6"
 						>
 							<FormField
 								control={form.control}
@@ -67,7 +69,9 @@ const ContactForm: React.FC = () => {
 									<FormItem>
 										<FormControl>
 											<Input
-												placeholder="Full name"
+												placeholder={t(
+													"contact:fullnamelabel"
+												)}
 												{...field}
 											/>
 										</FormControl>
@@ -82,7 +86,9 @@ const ContactForm: React.FC = () => {
 									<FormItem>
 										<FormControl>
 											<Input
-												placeholder="Email"
+												placeholder={t(
+													"contact:emaillabel"
+												)}
 												{...field}
 											/>
 										</FormControl>
@@ -97,7 +103,9 @@ const ContactForm: React.FC = () => {
 									<FormItem>
 										<FormControl>
 											<Textarea
-												placeholder="Message"
+												placeholder={t(
+													"contact:messagelabel"
+												)}
 												{...field}
 											/>
 										</FormControl>
@@ -106,7 +114,7 @@ const ContactForm: React.FC = () => {
 								)}
 							/>
 							<Button className="w-full" type="submit">
-								Submit
+								{t("contact:buttonlabel")}
 							</Button>
 						</form>
 					</Form>
@@ -126,14 +134,16 @@ const ContactForm: React.FC = () => {
 				<div className="flex">
 					<Map size={60} />
 					<div className="rtl:mr-5 ltr:ml-5">
-						<h1>Location:</h1>
-						<p className="text-gray-500">Iraq, Baghdad, Karrada</p>
+						<h1>{t("contact:locationlabel")}</h1>
+						<p className="text-gray-500">
+							{t("contact:locationdescription")}
+						</p>
 					</div>
 				</div>
 				<div className="flex">
 					<Mail size={60} />
 					<div className="rtl:mr-5 ltr:ml-5">
-						<h1>E-mail:</h1>
+						<h1>{t("contact:e-maillabel")}</h1>
 						<p className="text-gray-500">
 							info@masaken-albilad.com
 						</p>
@@ -142,7 +152,7 @@ const ContactForm: React.FC = () => {
 				<div className="flex">
 					<Phone size={60} />
 					<div className="rtl:mr-5 ltr:ml-5">
-						<h1>Phone:</h1>
+						<h1>{t("contact:phonelabel")}</h1>
 						<p className="text-gray-500">009647800000000</p>
 					</div>
 				</div>

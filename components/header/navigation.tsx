@@ -107,7 +107,7 @@ function Navigation() {
 					</div>
 					<button
 						onClick={onMenuClicked}
-						className="cursor-pointer lg:hidden block p-5 text-xl"
+						className="cursor-pointer lg:hidden block  text-xl"
 					>
 						<Menu />
 					</button>
@@ -125,8 +125,8 @@ function Navigation() {
 								))}
 							</ul>
 						</div>
-						<nav>
-							<ul className="lg:flex space-y-10 items-center lg:space-y-0 justify-between pt-4 lg:pt-0">
+						<nav className="w-full">
+							<ul className="lg:flex ltr:mr-5 rtl:ml-5 space-y-10 items-center lg:space-y-0 justify-between pt-4 lg:pt-0">
 								{renderNavTabs()}
 							</ul>
 						</nav>

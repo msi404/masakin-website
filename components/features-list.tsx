@@ -77,7 +77,7 @@ const FeaturesList: React.FC = () => {
 					{item.icon}
 					<div className="flex flex-col space-y-5">
 						<h1 className="font-bold">{item.title}</h1>
-						<p className="text-xs w-72 lg:text-base lg:w-96 text-gray-500">
+						<p className="text-xs w-64 lg:text-base lg:w-96 text-gray-500">
 							{item.description}
 						</p>
 					</div>

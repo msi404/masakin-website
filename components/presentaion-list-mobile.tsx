@@ -8,7 +8,7 @@ const PresentaionListMobile: React.FC = () => {
 	const { t } = useTranslation();
 	useWtxI18n();
 	return (
-		<ul className="max-w-[600px] mx-auto text-3xl flex flex-col space-y-10 h-full">
+		<ul className="max-w-[400px] mx-auto text-sm flex flex-col space-y-10 h-full">
 			<motion.li
 				initial={{
 					opacity: 0,
@@ -24,11 +24,11 @@ const PresentaionListMobile: React.FC = () => {
 					},
 				}}
 				viewport={{ once: true, amount: 0.6 }}
-				className="flex flex-col bg-yellow-500 space-y-16 py-10 items-center text-center rounded-3xl"
+				className="flex flex-col bg-yellow-500 space-y-10 py-5 items-center text-center rounded-3xl"
 			>
 				<h1 className="font-bold">{t("presentaionlistheaderone")}</h1>
 				<Separator />
-				<p className="text-xl font-light">
+				<p className="text-xs font-light">
 					{t("presentaionlistdescriptionone")}
 				</p>
 			</motion.li>
@@ -47,11 +47,11 @@ const PresentaionListMobile: React.FC = () => {
 					},
 				}}
 				viewport={{ once: true, amount: 0.6 }}
-				className="flex flex-col bg-yellow-500 space-y-16 py-10 items-center text-center rounded-3xl"
+				className="flex flex-col bg-yellow-500 space-y-10 py-5 items-center text-center rounded-3xl"
 			>
 				<h1 className="font-bold">{t("presentaionlistheadertwo")}</h1>
 				<Separator />
-				<p className="text-xl font-light">
+				<p className="text-xs font-light">
 					{t("presentaionlistdescriptiontwo")}
 				</p>
 			</motion.li>
@@ -71,11 +71,11 @@ const PresentaionListMobile: React.FC = () => {
 					},
 				}}
 				viewport={{ once: true, amount: 0.6 }}
-				className="flex flex-col text-white bg-slate-900 space-y-16 py-10 items-center text-center rounded-3xl"
+				className="flex flex-col text-white bg-slate-900 space-y-10 py-5 items-center text-center rounded-3xl"
 			>
 				<h1 className="font-bold">{t("presentaionlistheaderthree")}</h1>
 				<Separator />
-				<p className="text-xl font-light">
+				<p className="text-xs font-light">
 					{t("presentaionlistdescriptionthree")}
 				</p>
 			</motion.li>
@@ -94,11 +94,11 @@ const PresentaionListMobile: React.FC = () => {
 					},
 				}}
 				viewport={{ once: true, amount: 0.6 }}
-				className="flex flex-col bg-yellow-500 space-y-16 py-10 items-center text-center rounded-3xl"
+				className="flex flex-col bg-yellow-500 space-y-10 py-5 items-center text-center rounded-3xl"
 			>
 				<h1 className="font-bold">{t("presentaionlistheaderfour")}</h1>
 				<Separator />
-				<p className="text-xl font-light">
+				<p className="text-xs font-light">
 					{t("presentaionlistdescriptionfour")}
 				</p>
 			</motion.li>

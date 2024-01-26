@@ -4,7 +4,7 @@ import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 
 const Item: React.FC<{ title: string; image: string }> = ({ title, image }) => {
 	return (
-		<Card className="w-96">
+		<Card className="w-72 lg:w-96">
 			<CardContent>
 				<Image
 					width={500}

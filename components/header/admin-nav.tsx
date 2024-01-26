@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
-import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Menu, MapPin, Phone, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -77,7 +77,6 @@ function Navigation() {
 					exit={{ height: 100 }}
 					className="px-6 flex flex-wrap items-center space-x-6 lg:space-x-0 pb-10 max-w-[1400px] mx-auto"
 				>
-					<UserButton />
 					<div className="flex-1 flex justify-between items-center py-3">
 						<Logo />
 					</div>
@@ -89,7 +88,8 @@ function Navigation() {
 					</button>
 					<div className="flex flex-col space-y-5 justify-center items-center font-normal text-2xl lg:text-base text-center lg:flex lg:items-center lg:w-auto w-full">
 						<div className="hidden lg:block text-xs">
-							<ul className="flex space-x-10">
+							<ul className="flex items-center space-x-10">
+								<LogoutLink>Logout</LogoutLink>
 								{navLinks.map((link, i) => (
 									<li className="flex space-x-3" key={i}>
 										{link.icon}
@@ -119,7 +119,7 @@ function Navigation() {
 							? "text-yellow-600  before:block"
 							: "before:hidden"
 					}`,
-					"nav-tab"
+					"admin-tab"
 				)}
 				key={i}
 			>

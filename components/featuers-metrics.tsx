@@ -24,7 +24,7 @@ const FeatuersMetrics: React.FC = () => {
 						},
 					}}
 					viewport={{ once: true, amount: 0.6 }}
-					className="text-3xl w-96 lg:text-6xl"
+					className="text-xl w-56 lg:w-96 lg:text-6xl"
 				>
 					{t("featuersmetricheadline")}
 				</motion.h1>

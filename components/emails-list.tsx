@@ -25,12 +25,12 @@ const List: React.FC<{ items: any; deleteFunc: (id: string) => {} }> = ({
 	const [isLoading, setIsLoading] = useState(false);
 	return (
 		<Table>
-			<TableCaption>A list of your recent projects.</TableCaption>
+			<TableCaption>A list of your recent emails.</TableCaption>
 			<TableHeader>
 				<TableRow>
-					<TableHead className="w-[100px]">Thumnail</TableHead>
-					<TableHead>Title</TableHead>
-					<TableHead className="text-right">Id</TableHead>
+					<TableHead className="w-[100px]">Name</TableHead>
+					<TableHead>Email</TableHead>
+					<TableHead className="text-right">Message</TableHead>
 				</TableRow>
 			</TableHeader>
 			<TableBody>
@@ -38,19 +38,12 @@ const List: React.FC<{ items: any; deleteFunc: (id: string) => {} }> = ({
 					<Popover key={item.id}>
 						<PopoverTrigger asChild>
 							<TableRow>
-								<TableCell>
-									<Image
-										unoptimized
-										className="rounded-lg"
-										width={150}
-										height={150}
-										src={item.thumnail || item.image}
-										alt="item Image"
-									/>
-								</TableCell>
-								<TableCell>{item.title}</TableCell>
+								<TableCell>{item.name}</TableCell>
+								<TableCell>{item.email}</TableCell>
 								<TableCell className="text-right">
-									{item.id}
+									<p className="break-words">
+										{item.message}
+									</p>
 								</TableCell>
 							</TableRow>
 						</PopoverTrigger>

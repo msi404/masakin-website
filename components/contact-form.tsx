@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { Map, Mail, Phone } from "lucide-react";
+import { sendEmail } from "@/actions/actions";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -43,6 +44,12 @@ const ContactForm: React.FC = () => {
 	});
 
 	function onSubmit(data: z.infer<typeof FormSchema>) {
+		sendEmail({
+			name: data.fullname,
+			email: data.email,
+			message: data.message,
+		});
+		form.reset();
 		toast({
 			title: "You submitted you data.",
 		});
@@ -121,6 +128,7 @@ const ContactForm: React.FC = () => {
 				</div>
 				<div className="relative">
 					<Image
+						unoptimized
 						className="z-10"
 						src={MAP}
 						width={700}
@@ -144,16 +152,14 @@ const ContactForm: React.FC = () => {
 					<Mail size={60} />
 					<div className="rtl:mr-5 ltr:ml-5">
 						<h1>{t("contact:e-maillabel")}</h1>
-						<p className="text-gray-500">
-							info@masaken-albilad.com
-						</p>
+						<p className="text-gray-500">info@masaknalbilad.com</p>
 					</div>
 				</div>
 				<div className="flex">
 					<Phone size={60} />
 					<div className="rtl:mr-5 ltr:ml-5">
 						<h1>{t("contact:phonelabel")}</h1>
-						<p className="text-gray-500">009647800000000</p>
+						<p className="text-gray-500">07753506070</p>
 					</div>
 				</div>
 			</div>

@@ -77,7 +77,7 @@
 
 @layer components {
   .nav-tab {
-    @apply relative ltr:ml-4 rtl:mr-4 active:text-yellow-600  hover:text-yellow-500 lg:before:absolute lg:before:h-[4px] lg:before:top-10 lg:before:w-full lg:before:bg-yellow-600;
+    @apply relative ltr:ml-4 rtl:mr-4 active:text-yellow-600  hover:text-yellow-500 lg:before:absolute lg:before:h-[5px] lg:before:top-[35px] lg:before:w-full lg:before:bg-yellow-600;
   }
   .admin-tab {
     @apply relative ltr:ml-4 rtl:mr-4 active:text-yellow-600  hover:text-yellow-500 lg:before:absolute lg:before:h-[4px] lg:before:top-8 lg:before:w-full lg:before:bg-yellow-600;

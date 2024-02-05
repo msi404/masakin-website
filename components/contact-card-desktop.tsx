@@ -10,7 +10,7 @@ const ContactCardDesktop: React.FC = () => {
 	const { t } = useTranslation();
 	useWtxI18n();
 	return (
-		<div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex lg:justify-end">
+		<div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex lg:justify-end">
 			<div className="w-[300px] h-[200px] bg-yellow-500 p-10 absolute bottom-80 left-44" />
 			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 overflow-hidden">
 				<div
@@ -21,14 +21,24 @@ const ContactCardDesktop: React.FC = () => {
 					}}
 				/>
 				<div className="w-[600px] h-[600px] bg-yellow-500 p-10 absolute top-0 -left-24 skew-x-12" />
-				<div className="space-y-10 w-[450px] h-[500px] p-10 absolute top-0 left-10">
-					<h1 className="text-4xl w-72">{t("contactcardheader")}</h1>
+				<div className="space-y-10 w-[450px] h-[500px] p-10 absolute top-0 ltr:left-10 rtl:left-0">
+					<h1 className="text-3xl w-72">
+						<b>{t("contactcardfirstbold")}</b>{" "}
+						<span>{t("contactcardtext")}</span>
+						<b>{t("contactcardsecondbold")}</b>
+					</h1>
 					<p className="w-80">{t("contactcarddescription")}</p>
-					<Button variant="secondary">{t("contactcardlabel")}</Button>
+					<Button onClick={onButtonClicked} variant="secondary">
+						{t("contactcardlabel")}
+					</Button>
 				</div>
 			</div>
 		</div>
 	);
+
+	function onButtonClicked() {
+		window.location.replace("/contact");
+	}
 };
 
 export default ContactCardDesktop;

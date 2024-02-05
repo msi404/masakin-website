@@ -3,20 +3,29 @@ import React from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/components/ui/separator";
-import LanguageChanger from "@/components/language-changer";
 import Logo from "@/components/logo";
 
 const DesktopFooter: React.FC = () => {
 	const { t } = useTranslation();
 	const navLinks = [
-		"009647800000000",
-		"info@masaken.com",
+		"07753506070",
+		"07853506070",
+		"info@masaknalbilad.com",
 		"Iraq, Baghdad, Karrada",
 	];
 	const navTabs = [
-		t("common:serviceoffers"),
-		t("common:projects"),
-		t("common:commercialagencies"),
+		{
+			text: t("common:serviceoffers"),
+			func: redirectService,
+		},
+		{
+			text: t("common:projects"),
+			func: redirectProjects,
+		},
+		{
+			text: t("common:commercialagencies"),
+			func: redirectAgencies,
+		},
 	];
 	return (
 		<div className="flex flex-col w-screen space-y-16">
@@ -35,7 +44,13 @@ const DesktopFooter: React.FC = () => {
 					<ul className="space-y-3">
 						<li className="font-bold">{t("common:home")}</li>
 						{navTabs.map((tab, i) => (
-							<li key={i}>{tab}</li>
+							<li
+								className="cursor-pointer"
+								onClick={tab.func}
+								key={i}
+							>
+								{tab.text}
+							</li>
 						))}
 					</ul>
 				</div>
@@ -73,6 +88,16 @@ const DesktopFooter: React.FC = () => {
 			</div>
 		</div>
 	);
+
+	function redirectService() {
+		window.location.replace("/services");
+	}
+	function redirectProjects() {
+		window.location.replace("/projects");
+	}
+	function redirectAgencies() {
+		window.location.replace("/agencies");
+	}
 };
 
 export default DesktopFooter;

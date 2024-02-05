@@ -17,13 +17,23 @@ const MobileFooter: React.FC = () => {
 	const { t } = useTranslation();
 	const navLinks = [
 		"Iraq, Baghdad, Karrada",
-		"009647800000000",
-		"info@masaken.com",
+		"07753506070",
+		"07853506070",
+		"info@masaknalbilad.com",
 	];
 	const navTabs = [
-		t("common:serviceoffers"),
-		t("common:projects"),
-		t("common:commercialagencies"),
+		{
+			text: t("common:serviceoffers"),
+			func: redirectService,
+		},
+		{
+			text: t("common:projects"),
+			func: redirectProjects,
+		},
+		{
+			text: t("common:commercialagencies"),
+			func: redirectAgencies,
+		},
 	];
 	return (
 		<div className="flex flex-col space-y-8 w-screen">
@@ -41,9 +51,13 @@ const MobileFooter: React.FC = () => {
 					<AccordionContent>
 						<ul className="font-light text-gray-500 space-y-2 text-lg">
 							{navTabs.map((tab, i) => (
-								<li key={i}>
+								<li
+									className="cursor-pointer"
+									onClick={tab.func}
+									key={i}
+								>
 									<Separator className="my-2" />
-									<Link href="#">{tab}</Link>
+									{tab.text}
 								</li>
 							))}
 						</ul>
@@ -82,6 +96,16 @@ const MobileFooter: React.FC = () => {
 			</div>
 		</div>
 	);
+
+	function redirectService() {
+		window.location.replace("/services");
+	}
+	function redirectProjects() {
+		window.location.replace("/projects");
+	}
+	function redirectAgencies() {
+		window.location.replace("/agencies");
+	}
 };
 
 export default MobileFooter;

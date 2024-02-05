@@ -10,16 +10,26 @@ const ContactCardMobile: React.FC = () => {
 	const { t } = useTranslation();
 	useWtxI18n();
 	return (
-		<div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col rounded-xl overflow-hidden">
+		<div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col rounded-xl overflow-hidden">
 			<div className="space-y-5 bg-yellow-500 p-5">
-				<h1 className="text-xl w-72">{t("contactcardheader")}</h1>
-				<p className="w-72 text-xs">{t("contactcarddescription")}</p>
-				<Button className="w-full" variant="secondary">
+				<h1 className="text-xl w-64 md:w-72">
+					<b>{t("contactcardfirstbold")}</b>{" "}
+					<span>{t("contactcardtext")}</span>
+					<b>{t("contactcardsecondbold")}</b>
+				</h1>
+				<p className="w-64 md:w-72 text-xs">
+					{t("contactcarddescription")}
+				</p>
+				<Button
+					onClick={onButtonClicked}
+					className="w-full"
+					variant="secondary"
+				>
 					{t("contactcardlabel")}
 				</Button>
 			</div>
 			<div
-				className="w-[350px] md:w-[700px] h-[250px] bg-center bg-cover bg-no-repeat"
+				className="w-[300px] md:w-[500px] lg:w-[700px] h-[250px] bg-center bg-cover bg-no-repeat"
 				style={{
 					backgroundImage: `url(${IMAGE})`,
 					transform: `rotateY(180deg)`,
@@ -27,6 +37,10 @@ const ContactCardMobile: React.FC = () => {
 			/>
 		</div>
 	);
+
+	function onButtonClicked() {
+		window.location.replace("/contact");
+	}
 };
 
 export default ContactCardMobile;

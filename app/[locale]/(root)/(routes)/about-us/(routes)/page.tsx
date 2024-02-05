@@ -38,7 +38,7 @@ const Page: NextPage = () => {
 						<h1 className="text-xl">
 							{t("about-us:firstheadline")}
 						</h1>
-						<p className="text-xs w-96">
+						<p className="text-xs w-72 md:w-96">
 							{" "}
 							{t("about-us:firstdescription")}
 						</p>
@@ -55,7 +55,7 @@ const Page: NextPage = () => {
 						<h1 className="text-xl">
 							{t("about-us:secondheadline")}
 						</h1>
-						<p className="text-xs w-96">
+						<p className="text-xs w-72 md:w-96">
 							{" "}
 							{t("about-us:seconddescription")}
 						</p>
@@ -72,7 +72,7 @@ const Page: NextPage = () => {
 						<h1 className="text-xl">
 							{t("about-us:thirdheadline")}
 						</h1>
-						<p className="text-xs w-96">
+						<p className="text-xs w-72 md:w-96">
 							{t("about-us:thirddescription")}
 						</p>
 					</div>

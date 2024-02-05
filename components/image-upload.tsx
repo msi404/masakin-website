@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { CldUploadButton } from "next-cloudinary";
-import { Cloud } from "lucide-react";
+import { ImageIcon } from "lucide-react";
 
 interface ImageUploadProps {
 	value: string;
@@ -10,38 +11,59 @@ interface ImageUploadProps {
 	disabled?: boolean;
 }
 
-const ImageUpload: React.FC<ImageUploadProps> = ({ value, onChange }) => {
+export const ImageUpload = ({
+	value,
+	onChange,
+	disabled,
+}: ImageUploadProps) => {
 	const [isMounted, setIsMounted] = useState(false);
+
 	useEffect(() => {
 		setIsMounted(true);
 	}, []);
-	// result.info.asset_id
-	if (!isMounted) return null;
+
+	if (!isMounted) {
+		return false;
+	}
+
 	return (
-		<CldUploadButton
-			onUpload={(result: any) => {
-				onChange(result.info.secure_url);
-			}}
-			options={{
-				maxFiles: 1,
-			}}
-			uploadPreset="uxvsxycu"
-		>
-			<div className="p-4 border-4 border-dashed border-primary rounded-lg hover:opacity-75 transition flex flex-col space-y-2 items-center justify-center">
-				<div className="relative flex justify-center h-20 w-28 lg:h-40 lg:w-96 mx-auto">
-					{value ? (
-						<Image
-							fill
-							alt="upload"
-							className="rounded-lg object-cover"
-							src={value}
-						/>
-					) : (
-						<Cloud size={100} color="gray" />
-					)}
+		<div className="space-y-4 w-full flex flex-col justify-center items-center">
+			<CldUploadButton
+				options={{ maxFiles: 1 }}
+				onUpload={(result: any) => onChange(result.info.secure_url)}
+				uploadPreset="uxvsxycu"
+			>
+				<div
+					className="
+            p-4 
+            border-4 
+            border-dashed
+            border-primary/10 
+            rounded-lg 
+            hover:opacity-75 
+            transition 
+            flex 
+            flex-col 
+            space-y-2 
+            items-center 
+            justify-center
+          "
+				>
+					<div className="relative h-40 w-40 flex justify-center items-center">
+						{value && (
+							<Image
+								unoptimized
+								fill
+								alt="Upload"
+								src={value}
+								className="rounded-lg object-cover"
+							/>
+						)}
+						<ImageIcon size={60} />
+					</div>
 				</div>
-			</div>
-		</CldUploadButton>
+			</CldUploadButton>
+		</div>
 	);
 };
 

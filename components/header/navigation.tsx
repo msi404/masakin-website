@@ -53,11 +53,11 @@ function Navigation() {
 		},
 		{
 			icon: <Phone size={12} />,
-			text: "009647800000000",
+			text: "07753506070",
 		},
 		{
 			icon: <Mail size={12} />,
-			text: "info@masaken.com",
+			text: "info@masaknalbilad.com",
 		},
 	];
 

@@ -1,17 +1,22 @@
 import type { NextPage } from "next";
-import prisma from "@/lib/prisma";
-import Item from "@/components/item";
+import { collection, getDocs } from "firebase/firestore";
+import { store } from "@/lib/firebase";
+import AgencyItem from "@/components/agency-item";
 const Page: NextPage = async () => {
-	// const projects = await prisma.project.findMany();
+	const agenciesCollection = collection(store, "agencies");
+	const agenciesSnapshot = await getDocs(agenciesCollection);
+	const agencies = agenciesSnapshot.docs;
 	return (
-		<div className="flex flex-col space-y-10 md:flex-wrap md:flex-row md:space-y-0 md:gap-10 items-center">
-			{/* {projects.map(project => (
-				<Item
-					key={project.id}
-					title={project.title}
-					image={project.image}
+		<div className="flex flex-col justify-center items-center space-y-10">
+			{agencies.map((agency, i) => (
+				<AgencyItem
+					key={i}
+					title={agency.data().title}
+					logo={agency.data().logo}
+					image={agency.data().image}
+					caption={agency.data().caption}
 				/>
-			))} */}
+			))}
 		</div>
 	);
 };

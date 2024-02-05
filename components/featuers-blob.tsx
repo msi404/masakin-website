@@ -79,6 +79,7 @@ const FeatuersBlob: React.FC = () => {
 						</svg>
 					</div>
 					<Image
+						unoptimized
 						className="left-0 top-14 absolute"
 						width={600}
 						height={600}
@@ -116,6 +117,7 @@ const FeatuersBlob: React.FC = () => {
 					</svg>
 				</div>
 				<Image
+					unoptimized
 					className="left-0 top-24 absolute"
 					width={700}
 					height={700}

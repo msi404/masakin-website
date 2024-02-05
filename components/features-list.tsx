@@ -12,7 +12,7 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Hammer
-					className="mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					className="hidden mx-2 shadow-xl rounded-full md:block w-10 h-10 lg:mx-5 lg:p-2"
 					size={20}
 					color="DarkGoldenRod"
 				/>
@@ -23,7 +23,7 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Building
-					className=" mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					className=" hidden mx-2 shadow-xl rounded-full md:block w-10 h-10 lg:mx-5 lg:p-2"
 					size={20}
 					color="DarkGoldenRod"
 				/>
@@ -34,7 +34,7 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Construction
-					className=" mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					className=" hidden mx-2 shadow-xl rounded-full md:block w-10 h-10 lg:mx-5 lg:p-2"
 					size={20}
 					color="DarkGoldenRod"
 				/>
@@ -45,7 +45,7 @@ const FeaturesList: React.FC = () => {
 		{
 			icon: (
 				<Ship
-					className=" mx-2 shadow-xl rounded-full w-10 h-10 lg:mx-5 lg:p-2"
+					className=" hidden mx-2 shadow-xl rounded-full md:block w-10 h-10 lg:mx-5 lg:p-2"
 					size={20}
 					color="DarkGoldenRod"
 				/>
@@ -55,7 +55,7 @@ const FeaturesList: React.FC = () => {
 		},
 	];
 	return (
-		<ul className="space-y-10">
+		<ul className="space-y-10 mx-auto">
 			{list.map((item, i) => (
 				<motion.li
 					initial={{
@@ -77,7 +77,7 @@ const FeaturesList: React.FC = () => {
 					{item.icon}
 					<div className="flex flex-col space-y-5">
 						<h1 className="font-bold">{item.title}</h1>
-						<p className="text-xs w-64 lg:text-base lg:w-96 text-gray-500">
+						<p className="text-xs w-44 md:w-64 lg:text-base lg:w-96 text-gray-500">
 							{item.description}
 						</p>
 					</div>

@@ -47,12 +47,16 @@ const Banner: React.FC<IBanner> = ({ title, description, label, image }) => {
 			>
 				{description}
 			</motion.p>
-			<Button variant="outline" size="lg">
+			<Button onClick={onButtonClicked} variant="outline" size="lg">
 				{label}
 				<ArrowRight className="ltr:ml-3 rtl:mr-3 rtl:-scale-x-100" />
 			</Button>
 		</section>
 	);
+
+	function onButtonClicked() {
+		window.location.replace("/about-us");
+	}
 };
 
 export default Banner;

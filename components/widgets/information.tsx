@@ -47,6 +47,7 @@ const Information: React.FC = () => {
 						{t("informationdescription")}
 					</motion.p>
 					<Button
+						onClick={onButtonClicked}
 						variant="default"
 						size="lg"
 						className="w-full lg:w-auto"
@@ -57,6 +58,10 @@ const Information: React.FC = () => {
 			</div>
 		</section>
 	);
+
+	function onButtonClicked() {
+		window.location.replace("/about-us");
+	}
 };
 
 export default Information;

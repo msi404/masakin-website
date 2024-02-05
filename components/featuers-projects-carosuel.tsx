@@ -11,20 +11,11 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const FeatuersProjectsCarosuel: React.FC = () => {
+const FeatuersProjectsCarosuel: React.FC<{ projects: any }> = ({
+	projects,
+}) => {
 	const { t } = useTranslation();
 	useWtxI18n();
-	const images = [
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-		"https://topsdecor.com/wp-content/uploads/2020/08/1596795106_543_These-are-the-coolest-skyscraper-buildings-in-Dubai.jpg",
-	];
 	return (
 		<section className="container space-y-10 px-20 md:px-36">
 			<div>
@@ -34,26 +25,27 @@ const FeatuersProjectsCarosuel: React.FC = () => {
 			</div>
 			<Carousel opts={{ align: "end" }}>
 				<CarouselContent className="flex rtl:flex-row-reverse">
-					{images.map((image, i) => (
+					{projects.map((project: any, i: number) => (
 						<CarouselItem
 							key={i}
 							className="md:basis-1/3 lg:basis-1/4"
 						>
 							<div className="relative rounded-2xl overflow-hidden">
 								<Image
+									unoptimized
 									className="rounded-2xl"
 									width={500}
 									height={500}
-									src={image}
+									src={project.thumnail}
 									alt="Building"
 								/>
 								<div className="absolute left-0 bottom-0 w-full h-56 bg-gradient-to-t from-slate-900" />
 								<div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white text-center">
 									<h1 className="font-bold text-xl">
-										Lorem Ipsum
+										{project.title}
 									</h1>
 									<p className="text-xs font-light">
-										Lorem Ipsum Lorem Ipsum
+										{project.caption}
 									</p>
 								</div>
 							</div>

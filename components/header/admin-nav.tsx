@@ -48,11 +48,11 @@ function Navigation() {
 		},
 		{
 			icon: <Phone size={12} />,
-			text: "009647800000000",
+			text: "07753506070",
 		},
 		{
 			icon: <Mail size={12} />,
-			text: "info@masaken.com",
+			text: "info@masaknalbilad.com",
 		},
 	];
 
@@ -67,13 +67,28 @@ function Navigation() {
 			text: "Projects",
 			delay: 0.2,
 		},
+		{
+			href: "/dashboard/services",
+			text: "Services",
+			delay: 0.3,
+		},
+		{
+			href: "/dashboard/agencies",
+			text: "Agencies",
+			delay: 0.4,
+		},
+		{
+			href: "/dashboard/emails",
+			text: "Emails",
+			delay: 0.5,
+		},
 	];
 	return (
 		<div className="fixed border-b border-slate-500 overflow-hidden w-screen top-0 z-50 text-slate-900 font-semibold bg-white">
 			<AnimatePresence>
 				<motion.div
 					initial={{ height: 100 }}
-					animate={{ height: isOpen ? 280 : 100 }}
+					animate={{ height: isOpen ? 420 : 100 }}
 					exit={{ height: 100 }}
 					className="px-6 flex flex-wrap items-center space-x-6 lg:space-x-0 pb-10 max-w-[1400px] mx-auto"
 				>

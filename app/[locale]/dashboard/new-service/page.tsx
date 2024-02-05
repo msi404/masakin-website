@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { createProject } from "@/actions/actions";
+import { createService } from "@/actions/actions";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -34,18 +34,7 @@ const formSchema = z.object({
 	caption: z.string().min(10, {
 		message: "Caption must be at least 10 characters.",
 	}),
-	thumnail: z.string().min(5, {
-		message: "You must provide thumnail.",
-	}),
-	firstImage: z.string().min(5, {
-		message: "You must provide image.",
-	}),
-	secondImage: z.string().min(5, {
-		message: "You must provide image.",
-	}),
-	thirdImage: z.string().min(5, {
-		message: "You must provide image.",
-	}),
+	image: z.string(),
 });
 
 const Page: NextPage = () => {
@@ -55,10 +44,7 @@ const Page: NextPage = () => {
 		defaultValues: {
 			title: "",
 			caption: "",
-			thumnail: "",
-			firstImage: "",
-			secondImage: "",
-			thirdImage: "",
+			image: "",
 		},
 	});
 
@@ -70,10 +56,10 @@ const Page: NextPage = () => {
 			<Card className="lg:w-1/2 mx-auto">
 				<CardHeader>
 					<CardTitle className="text-base md:text-3xl">
-						Create Project
+						Create Service
 					</CardTitle>
 					<CardDescription>
-						Deploy your new project in one-click.
+						Deploy your new service in one-click.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -97,7 +83,7 @@ const Page: NextPage = () => {
 											/>
 										</FormControl>
 										<FormDescription>
-											This is the project public title.
+											This is the service public title.
 										</FormDescription>
 										<FormMessage />
 									</FormItem>
@@ -118,7 +104,7 @@ const Page: NextPage = () => {
 											/>
 										</FormControl>
 										<FormDescription>
-											This is the project public caption.
+											This is the service public caption.
 										</FormDescription>
 										<FormMessage />
 									</FormItem>
@@ -126,11 +112,11 @@ const Page: NextPage = () => {
 							/>
 							<FormField
 								control={form.control}
-								name="thumnail"
+								name="image"
 								render={({ field }) => (
 									<FormItem className="flex flex-col space-y-5">
 										<FormLabel className="font-bold text-base lg:text-3xl">
-											Upload Thumnail
+											Upload Image
 										</FormLabel>
 										<FormControl>
 											<ImageUpload
@@ -140,71 +126,12 @@ const Page: NextPage = () => {
 											/>
 										</FormControl>
 										<FormDescription>
-											This is the project thumnail.
+											This is the service image.
 										</FormDescription>
 										<FormMessage />
 									</FormItem>
 								)}
 							/>
-							<div className="flex flex-wrap xl:flex-nowrap justify-around space-x-3">
-								<FormField
-									control={form.control}
-									name="firstImage"
-									render={({ field }) => (
-										<FormItem className="flex flex-col space-y-5">
-											<FormControl>
-												<ImageUpload
-													disabled={isLoading}
-													onChange={field.onChange}
-													value={field.value}
-												/>
-											</FormControl>
-											<FormDescription>
-												This is the project image.
-											</FormDescription>
-											<FormMessage />
-										</FormItem>
-									)}
-								/>
-								<FormField
-									control={form.control}
-									name="secondImage"
-									render={({ field }) => (
-										<FormItem className="flex flex-col space-y-5">
-											<FormControl>
-												<ImageUpload
-													disabled={isLoading}
-													onChange={field.onChange}
-													value={field.value}
-												/>
-											</FormControl>
-											<FormDescription>
-												This is the project image.
-											</FormDescription>
-											<FormMessage />
-										</FormItem>
-									)}
-								/>
-								<FormField
-									control={form.control}
-									name="thirdImage"
-									render={({ field }) => (
-										<FormItem className="flex flex-col space-y-5">
-											<FormControl>
-												<ImageUpload
-													disabled={isLoading}
-													onChange={field.onChange}
-													value={field.value}
-												/>
-											</FormControl>
-											<FormDescription>
-												This is the project image.
-											</FormDescription>
-											<FormMessage />
-										</FormItem>
-									)}
-								/>
-							</div>
 							<CardFooter>
 								<div className="mx-auto w-96 flex flex-col md:justify-between md:flex-row space-y-7 md:space-y-0">
 									<Button
@@ -231,19 +158,16 @@ const Page: NextPage = () => {
 		</Fragment>
 	);
 	async function onSubmit(values: z.infer<typeof formSchema>) {
-		await createProject({
+		await createService({
 			title: values.title,
 			caption: values.caption,
-			thumnail: values.thumnail,
-			firstImage: values.firstImage,
-			secondImage: values.secondImage,
-			thirdImage: values.thirdImage,
+			image: values.image,
 		});
 		form.reset();
-		window.location.replace("/dashboard/projects");
+		window.location.replace("/dashboard/services");
 		toast({
 			variant: "success",
-			title: "You successfuly added a new project.",
+			title: "You successfuly added a new service.",
 		});
 	}
 };

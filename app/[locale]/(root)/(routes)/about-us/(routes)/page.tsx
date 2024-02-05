@@ -15,6 +15,7 @@ const Page: NextPage = () => {
 			<div className="flex flex-col space-y-10 lg:flex-row lg:justify-between lg:space-y-0">
 				<div className="relative w-full">
 					<Image
+						unoptimized
 						width={500}
 						height={500}
 						src={IMAGE_1}
@@ -29,6 +30,7 @@ const Page: NextPage = () => {
 			<div className="flex flex-col space-y-16 lg:flex-row lg:justify-between lg:space-y-0">
 				<div className="flex flex-col space-y-10 items-center">
 					<Image
+						unoptimized
 						width={200}
 						height={200}
 						src={IMAGE_2}
@@ -46,6 +48,7 @@ const Page: NextPage = () => {
 				</div>
 				<div className="flex flex-col space-y-10 items-center">
 					<Image
+						unoptimized
 						width={200}
 						height={200}
 						src={IMAGE_3}
@@ -63,6 +66,7 @@ const Page: NextPage = () => {
 				</div>
 				<div className="flex flex-col space-y-10 items-center">
 					<Image
+						unoptimized
 						width={200}
 						height={200}
 						src={IMAGE_4}
